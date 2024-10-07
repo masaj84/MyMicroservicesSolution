@@ -16,7 +16,7 @@ namespace NotificationService.Services
             Console.WriteLine($"Received notification, track ID: {message.TrackingId}");
 
            
-            Console.WriteLine($"Email end: all files reqired for track ID: {message.TrackingId}, has been uploaded successfully");
+            Console.WriteLine($"Email send: all files reqired for track ID: {message.TrackingId}, has been uploaded successfully");
         }
     }
 }

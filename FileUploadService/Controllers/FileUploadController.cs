@@ -25,7 +25,6 @@ namespace FileUploadService.Controllers
             if (fileUpload == null)
                 return BadRequest("Error: No files attached!");
 
-
             var trackingId = _fileStorage.AddFile(fileUpload);
 
             //If all types of docs are sent => call RabbitMQ
@@ -35,7 +34,7 @@ namespace FileUploadService.Controllers
                 return Ok(new { message = "All files has been uploaded", trackingId });
             }
 
-            return Ok(new { message = "Files uploaded. This file track ID is: ", trackingId });
+            return Ok(new { message = "Files uploaded."});
         }
 
         [HttpGet("{trackingId}")]

@@ -19,7 +19,7 @@ builder.Services.AddMassTransit(x =>
 });
 
 builder.Services.AddSingleton<IFileStorage, InMemoryFileStorage>();
-builder.Services.AddSingleton<IFilesUploadService, FilesUploadService>();
+builder.Services.AddScoped<IFilesUploadService, FilesUploadService>();
 builder.Services.AddControllers();
 
 // Add services to the container.
