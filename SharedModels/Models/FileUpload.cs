@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SharedModels.Enums;
 
 namespace SharedModels.Models
 {
     public class FileUpload
     {
-        public string? TrackingId { get; set; } = Guid.NewGuid().ToString(); //Track ID
-        public string BusinessUserId { get; set; }  //Business ID
-        public string CustomerId { get; set; }  //Customer ID
+        public string? TrackingId { get; set; } = Guid.NewGuid().ToString();
+        public int CustomerId { get; set; }  
         public string FileName { get; set; }
         public FileCategory FileCategory { get; set; }
         public bool IsUploaded { get; set; }

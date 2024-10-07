@@ -18,7 +18,7 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
-builder.Services.AddSingleton<IFileStorage, InMemoryFileStorage>();
+builder.Services.AddSingleton<IInMemoryFileStorage, InMemoryFileStorage>();
 builder.Services.AddScoped<IFilesUploadService, FilesUploadService>();
 builder.Services.AddControllers();
 

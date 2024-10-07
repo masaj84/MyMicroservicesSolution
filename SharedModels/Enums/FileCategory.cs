@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SharedModels.Enums
 {
-    public enum ClientMessages
+    public enum FileCategory
     {
-
-        noFile = 0
+        Passport = 0,
+        DrivingLicence = 1,
+        Agreement = 2
     }
 }
