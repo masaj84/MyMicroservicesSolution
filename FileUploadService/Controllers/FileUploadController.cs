@@ -37,7 +37,7 @@ namespace FileUploadService.Controllers
             return Ok(new { message = "Files uploaded."});
         }
 
-        [HttpGet("{trackingId}")]
+        [HttpGet]
         public IActionResult GetStatus(string trackingId)
         {
             var files = _fileStorage.GetFilesByCustomer(trackingId).ToList();
@@ -46,5 +46,6 @@ namespace FileUploadService.Controllers
 
             return Ok(files);
         }
+
     }
 }
