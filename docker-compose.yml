@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+  file-upload-service:
+    build:
+      context: ./FileUploadService
+    ports:
+      - 5000:80
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - rabbitmq
+  notification-service:
+    build:
+      context: ./NotificationService
+    ports:
+      - 5001:80
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - rabbitmq
